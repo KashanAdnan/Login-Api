@@ -2,7 +2,7 @@ const emailvalidator = require("email-validator");
 const UserModel = require("../Models/User.Model.js");
 const sendToken = require("../Utils/Send.Token.js");
 
-const ShowWorking = async (req, res) => {
+const ShowWorking =  (req, res) => {
   res.send("It is working Nicely so we can work eith this");
 };
 
