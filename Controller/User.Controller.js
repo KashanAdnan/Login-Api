@@ -2,6 +2,10 @@ const emailvalidator = require("email-validator");
 const UserModel = require("../Models/User.Model.js");
 const sendToken = require("../Utils/Send.Token.js");
 
+const ShowWorking = async (req, res) => {
+  res.send("It is working Nicely so we can work eith this");
+};
+
 const createUser = async (req, res) => {
   const { name, email, password, phoneNo } = req.body;
   if (emailvalidator.validate(email)) {
@@ -19,7 +23,7 @@ const createUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
-  if (emailvalidator.validate(email)) { 
+  if (emailvalidator.validate(email)) {
     if (!email || !password) {
       res
         .send(200)
@@ -53,4 +57,5 @@ module.exports = {
   createUser,
   loginUser,
   Logout,
+  ShowWorking,
 };
